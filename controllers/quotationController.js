@@ -20,7 +20,8 @@ exports.createQuotation = async (req, res) => {
       modeOtherText,
       quoteValidityDays,
       unitPriceMultiplier,
-      currencyUnit
+      currencyUnit,
+      forCompany
     } = req.body;
 
     const userId = req.user.userId;
@@ -72,7 +73,8 @@ exports.createQuotation = async (req, res) => {
       modeOtherText,
       quoteValidityDays,
       unitPriceMultiplier,
-      currencyUnit
+      currencyUnit,
+      forCompany
     });
 
     await quotation.save();

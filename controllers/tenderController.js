@@ -6,6 +6,7 @@ exports.createTender = async (req, res) => {
     const {
       title,
       description,
+      tenderNo,
       customerId,
       publishedOn,
       preBidMeeting,
@@ -55,6 +56,7 @@ exports.createTender = async (req, res) => {
     const tender = new Tender({
       title,
       description,
+      tenderNo,
       user: userId,
       customerId,
       publishedOn,

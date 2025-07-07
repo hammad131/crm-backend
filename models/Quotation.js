@@ -33,6 +33,7 @@ const quotationSchema = new mongoose.Schema({
   quoteValidityDays: { type: Number },
   unitPriceMultiplier: { type: Number },
   currencyUnit: { type: String },
+  forCompany: { type: String, enum: ["Paktech", "LinkLines", "Techno"], default: "Paktech" },
 },
 {
   timestamps: true

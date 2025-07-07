@@ -13,5 +13,5 @@ router.delete("/users/:id",authenticate,isAdmin, userController.deleteUser);
 
 // All users can view their own profile
 router.get("/users/:id",authenticate, userController.getUser);
-
+router.get("/users",authenticate, userController.getAllUsers);
 module.exports = router;

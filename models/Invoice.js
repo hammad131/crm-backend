@@ -25,7 +25,7 @@ const invoiceSchema = new mongoose.Schema({
   grandTotal: { type: Number, required: true },
 
   amountInWords: { type: String },// auto generated at backend
-
+  forCompany: { type: String },
   paymentInstructions: { 
     type: String, 
     default: "Make all checks payable to M/S. PAKTECH INSTRUMENTS COMPANY" 

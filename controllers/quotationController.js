@@ -47,7 +47,7 @@ exports.createQuotation = async (req, res) => {
     // const subTotal = items.reduce((acc, item) => acc + (item.qty * item.unitPrice), 0);
     // const taxAmount = subTotal * parseFloat(tax || 0);
     // const grandTotal = subTotal + taxAmount;
-      const subTotal = items.reduce((acc, item) => acc + item.qty * item.unitPrice * (unitPriceMultiplier || 1), 0);
+      const subTotal = items.reduce((acc, item) => acc + item.qty * item.unitPrice / (unitPriceMultiplier || 1), 0);
       const taxAmount = subTotal * parseFloat(tax || 0);
       const grandTotal = subTotal + taxAmount;
 
@@ -120,7 +120,7 @@ exports.updateQuotation = async (req, res) => {
     const updates = req.body;
     
     if (updates.items) {
-      updates.subTotal = updates.items.reduce((acc, item) => acc + item.qty * item.unitPrice * (updates.unitPriceMultiplier || 1), 0);
+      updates.subTotal = updates.items.reduce((acc, item) => acc + item.qty * item.unitPrice / (updates.unitPriceMultiplier || 1), 0);
       updates.grandTotal = updates.subTotal + updates.subTotal* parseFloat(updates.tax || 0);
     }
 

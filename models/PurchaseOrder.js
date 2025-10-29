@@ -34,9 +34,9 @@ const purchaseOrderSchema = new mongoose.Schema({
   shippingTerms: { type: String },
   shippingMethod: { type: String }, // drop down to By air or By Sea or Both By Air and Sea
   deliveryDate: { type: Date },
-
+  destination:{type: String},
   items: [poItemSchema],
-
+  currencyUnit:{type: String},
   subTotal: { type: Number, required: true },
   grandTotal: { type: Number, required: true },
 

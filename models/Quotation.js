@@ -2,14 +2,14 @@ const mongoose = require("mongoose");
 
 const itemSchema = new mongoose.Schema({
   sNo: Number,
-  refNo:Number,
+  refNo:String,
   item: String,
   qty: Number,
   unitPrice: Number,
 });
 
 const quotationSchema = new mongoose.Schema({
-  tenderId: { type: mongoose.Schema.Types.ObjectId, ref: "Tender", required: true },
+  tenderId: { type: mongoose.Schema.Types.Mixed},
   userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   customerId: { type: mongoose.Schema.Types.ObjectId, ref: "Customer", required: true },
   quoteAmount: { type: Number, required: true },

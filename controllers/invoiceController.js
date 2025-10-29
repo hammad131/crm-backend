@@ -37,6 +37,7 @@ exports.createInvoice = async (req, res) => {
       invoiceDate,
       customerId,
       orderReference,
+      forCompany,
       items,
       paymentInstructions,
       status
@@ -60,6 +61,7 @@ exports.createInvoice = async (req, res) => {
       userId,
       customerId,
       orderReference,
+      forCompany,
       items,
       subTotal,
       totalGST,

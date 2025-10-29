@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 // Item subdocument schema
 const itemSchema = new mongoose.Schema({
   sNo: { type: Number },
+  itemName: { type: String },
   item: { type: String },
   tenderItemRef: { type: String },
+  unitPrice: { type: Number },
   expectedDeliveryDate: { type: Date }
 });
 

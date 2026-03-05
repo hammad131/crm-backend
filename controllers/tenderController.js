@@ -48,7 +48,8 @@ exports.createTender = async (req, res) => {
       lateDeliveryCharges,
       projectStatus,
       focalPersonInfo,
-      inchargeAtPaktech
+      inchargeAtPaktech,
+      documents
     } = req.body;
 
     const userId = req.user.userId;
@@ -99,7 +100,8 @@ exports.createTender = async (req, res) => {
       lateDeliveryCharges,
       projectStatus,
       focalPersonInfo,
-      inchargeAtPaktech
+      inchargeAtPaktech,
+      documents
     });
 
     await tender.save();

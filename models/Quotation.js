@@ -19,12 +19,16 @@ const quotationSchema = new mongoose.Schema({
   tax: { type: Number, required: true },
   grandTotal: { type: Number, required: true },
   items: [itemSchema],
-
+  // Addresses
+  billToAddress: { type: String },
+  shipToAddress: { type: String },
+  sameAsShipTo: { type: Boolean },
   // Additional fields
   delivery: { type: String },
   warranty: { type: String },
   coOrigin: [{ type: String }],          // List of countries of origin
-  principal: [{ type: String }],         // List of principal names
+  principal: [{ type: String }],
+  termsAndConditions : [{ type: String }],        // List of principal names
   paymentTerms: { type: String },
   approvedBy: { type: String },
   oemSpecification: { type: String }, // file upload to cloudinary

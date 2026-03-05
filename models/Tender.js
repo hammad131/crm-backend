@@ -111,7 +111,8 @@ const TenderSchema = new mongoose.Schema({
     default: 'Ongoing'
   },
   focalPersonInfo: { type: String },
-  inchargeAtPaktech: { type: String }
+  inchargeAtPaktech: { type: String },
+  documents :[{type:String}]
 
 }, {
   timestamps: true

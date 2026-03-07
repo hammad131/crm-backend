@@ -66,7 +66,7 @@ const TenderSchema = new mongoose.Schema({
   openingTimeAndVenue: { type: String },
   singleStage: {
     type: String,
-    enum: ["Single Stage One Envelope", "Single Stage Two Envelope"],
+    enum: ["","Single Stage One Envelope", "Single Stage Two Envelope"],
     default: "Single Stage One Envelope"
   },
   twoStageTechnicalOpeningTimeAndDate: { type: Date },
@@ -84,14 +84,14 @@ const TenderSchema = new mongoose.Schema({
   
   performanceGuarantee: {
     type: String,
-    enum: ['NIL', 'Bank Guarantee', 'Pay Order', 'Other'],
+    enum: ["",'NIL', 'Bank Guarantee', 'Pay Order', 'Other'],
     default: 'NIL'
   },
   performanceGuaranteeOtherText: { type: String }, // Shown when 'Other' is selected
 
   performanceGuaranteeReleased: {
     type: String,
-    enum: ['NIL', 'Letter Submitted', 'Released'],
+    enum: ["",'NIL', 'Letter Submitted', 'Released'],
     default: 'NIL'
   },
 
@@ -103,14 +103,14 @@ const TenderSchema = new mongoose.Schema({
 
   billStatus: {
     type: String,
-    enum: ['Submitted', 'Not Submitted', 'Bill Cleared'],
+    enum: ["",'Submitted', 'Not Submitted', 'Bill Cleared'],
     default: 'Not Submitted'
   },
   billUrl: { type: String }, // PDF URL
 
   modeOfDelivery: {
     type: String,
-    enum: ['FOR', 'C&F', 'Other'],
+    enum: ["",'FOR', 'C&F', 'Other'],
     default: 'FOR'
   },
   modeOfDeliveryOtherText: { type: String }, // Shown when 'Other' is selected
@@ -130,7 +130,7 @@ const TenderSchema = new mongoose.Schema({
   extensionLetterImage: { type: String }, // PDF URL
   extensionStatus: {
     type: String,
-    enum: ['NIL', 'Extended', 'Not Extended', 'Pending'],
+    enum: ["",'NIL', 'Extended', 'Not Extended', 'Pending'],
     default: 'Pending'
   },
   extendedDeliveryDate: { type: Date },
@@ -138,7 +138,7 @@ const TenderSchema = new mongoose.Schema({
 
   projectStatus: {
     type: String,
-    enum: ['Ongoing', 'Completed', 'Cancelled', 'On Hold'],
+    enum: ["",'Ongoing', 'Completed', 'Cancelled', 'On Hold'],
     default: 'Ongoing'
   },
   focalPersonInfo: { type: String },

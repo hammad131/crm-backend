@@ -10,6 +10,37 @@ const itemSchema = new mongoose.Schema({
   expectedDeliveryDate: { type: Date }
 });
 
+const tenderDocumentSchema = new mongoose.Schema(
+  {
+    title: { type: String, required: true, trim: true },
+    type: {
+      type: String,
+      required: true,
+      enum: [
+        'quotation',
+        'technical',
+        'financial',
+        'boq',
+        'drawing',
+        'specification',
+        'catalog',
+        'purchase_order',
+        'invoice',
+        'delivery_note',
+        'inspection_report',
+        'completion_certificate',
+        'other',
+      ],
+      default: 'other',
+    },
+    fileName: { type: String, required: true, trim: true },
+    fileUrl: { type: String, required: true, trim: true },
+    publicId: { type: String, required: true, trim: true },
+    format: { type: String, trim: true },
+    uploadedAt: { type: Date, default: Date.now },
+  },
+  { _id: false }
+);
 const TenderSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
@@ -112,7 +143,10 @@ const TenderSchema = new mongoose.Schema({
   },
   focalPersonInfo: { type: String },
   inchargeAtPaktech: { type: String },
-  documents :[{type:String}]
+  documents: {
+      type: [tenderDocumentSchema],
+      default: [],
+    }
 
 }, {
   timestamps: true
